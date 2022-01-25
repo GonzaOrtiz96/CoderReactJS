@@ -1,0 +1,62 @@
+
+ul {
+  list-style: none;
+}
+/* estructura modificada de bootstrap para el menu */
+nav {
+  /* le doy un fondo asi como un pequeño padding al nav para que quede mejor ahora q es sticky */
+  background-color: #03045e;
+  padding: 5px;
+}
+
+nav .nav-pills {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+nav .nav-pills .nav-link.active, nav .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #03045e;
+}
+
+nav .nav-pills .nav-link {
+  font-family: minecraft-font;
+  font-size: 0.7rem;
+  color: white;
+}
+
+nav .nav-pills .nav-link:hover {
+  color: #caf0f8;
+}
+
+@media (min-width: 351px) {
+  .nav-pills .nav-link {
+    font-size: 1rem !important;
+    /* lo mismo que abajo... desconozco el porque */
+  }
+}
+
+/* tuve q poner el !important xq en bootstrap lo tenia y sino no lo podia sobreescribir */
+.bg-dark {
+  background-color: #03045e !important;
+}
+
+/* separe esta clase q pertenece a nav-pills porque me generaba problemas con las animaciones */
+.nav-item {
+  background-color: #023e8a;
+  color: white;
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
+  border-radius: 8%;
+  padding: 10px;
+  justify-content: space-around;
+}
+
+.nav-item:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
