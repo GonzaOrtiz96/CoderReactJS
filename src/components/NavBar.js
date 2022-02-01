@@ -12,6 +12,7 @@ const NavBar = () => {
                 <li className="nav-item"><a className="nav-link" href="#">Rebajas</a></li>
                 <li className="nav-item"><a className="nav-link" href="#">Nosotros</a></li>
                 <li><CartWidget /></li>
+                <li style={{color:'white', fontSize:50}}>Pritanorka</li>
             </ul>
         </nav>
     )
