@@ -1,6 +1,6 @@
-import './bootstrap.css'
-import './estilos.css'
-import CartWidget from './CartWidget';
+import '../../Styles/bootstrap.min.css'
+import '../../Styles/estilos.css'
+import CartWidget from '../CartWidget/CartWidget';
 
 
 const NavBar = () => {

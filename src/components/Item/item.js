@@ -1,4 +1,4 @@
-import '../bootstrap.min.css';
+import '../../Styles/bootstrap.min.css';
 import React from 'react';
 
 const Item = ({ data }) => {
@@ -9,7 +9,7 @@ const Item = ({ data }) => {
                 {data.login}
             </h2>
             <p className='cardText'>
-                URL a su GitHub: {data.html_url}
+                URL a su GitHub: <a href={data.html_url}>{data.html_url}</a>
             </p>
             <button className='btn btn-outline-primary'><a href='#' style={{textDecoration:'none'}}>A desarrollar</a></button>
         </div>

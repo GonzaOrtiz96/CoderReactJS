@@ -1,18 +1,22 @@
-import Item from '../Item/item';
+import React, {useState, useEffect} from 'react';
 import '../../Styles/bootstrap.min.css';
 
-const ItemList = ({datos}) =>{
+//component
+import Item from '../Item/item';
+
+
+const ItemDetail = ({datos}) => {
     return(
         <div className='card col'>
-            {datos.map((info) =>{
-                return (
+            {datos.map((info) => {
+                return(
                     <div key={info.id}>
                         <Item data={info}/>
                     </div>
-                )
+                );
             })}
         </div>
     );
 };
 
-export default ItemList;
+export default ItemDetail;

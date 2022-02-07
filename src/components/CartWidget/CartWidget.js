@@ -1,4 +1,4 @@
-import ico from './CartIco.png';
+import ico from '../../media/CartIco.png';
 
 const CartWidget = () => {
     return (
