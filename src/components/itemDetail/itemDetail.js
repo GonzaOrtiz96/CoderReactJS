@@ -8,13 +8,15 @@ import Item from '../Item/item';
 const ItemDetail = ({datos}) => {
     return(
         <div className='card col'>
-            {datos.map((info) => {
-                return(
-                    <div key={info.id}>
-                        <Item data={info}/>
-                    </div>
-                );
-            })}
+            <div className='cardBody'>
+            <img className='imgFluid' src={datos.avatar_url} style={{width:300}}/>
+            <h2 className='cradTitle'>
+                {datos.login}
+            </h2>
+            <p className='cardText'>
+                URL a su GitHub: <a href={datos.html_url}>{datos.html_url}</a>
+            </p>
+            </div>
         </div>
     );
 };

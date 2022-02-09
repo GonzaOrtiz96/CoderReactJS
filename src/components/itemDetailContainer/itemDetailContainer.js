@@ -12,12 +12,11 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
         axios('https://api.github.com/users')
-        .then(respuesta => setUsers(respuesta.data));
+        .then(respuesta => setUsers(respuesta.data[0]));
         setTimeout(() =>{
             setCargando(false);
         }, 2000);
     }, []);
-    
     return(
         <div>
             {cargando ? <Spinner /> : <ItemDetail datos={users}/>}
