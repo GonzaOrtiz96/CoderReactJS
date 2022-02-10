@@ -1,5 +1,8 @@
-import Item from '../Item/item';
 import '../../Styles/bootstrap.min.css';
+
+//components
+import { Link } from 'react-router-dom';
+import Item from '../Item/item';
 
 const ItemList = ({datos}) =>{
     return(
@@ -7,7 +10,10 @@ const ItemList = ({datos}) =>{
             {datos.map((info) =>{
                 return (
                     <div key={info.id}>
-                        <Item data={info}/>
+                        <Link to={`/detail/${info.id}`}>
+                            <Item data={info}/>
+                        </Link>
+                        
                     </div>
                 )
             })}

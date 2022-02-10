@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import { useParams } from 'react-router-dom';
 import '../../Styles/bootstrap.min.css';
 import axios from 'axios';
 
@@ -10,12 +11,14 @@ const ItemDetailContainer = () => {
     const [users, setUsers] = useState([]);
     const [cargando, setCargando] = useState(true);
 
+    let id = useParams();
+
     useEffect(() => {
         axios('https://api.github.com/users')
-        .then(respuesta => setUsers(respuesta.data[0]));
+        .then(respuesta => setUsers(respuesta.data[id.id-1]));
         setTimeout(() =>{
             setCargando(false);
-        }, 2000);
+        }, 1000);
     }, []);
     return(
         <div>
