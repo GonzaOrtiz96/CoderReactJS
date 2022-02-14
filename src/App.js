@@ -19,7 +19,7 @@ const App = () =>{
         <Router>
             <div className="App">
                 <NavBar />
-            </div>
+            
             <Routes>
                 <Route path='/' element={<Home />}/>
                 <Route path='/recomendados' element={<Recomendados />}/>
@@ -27,6 +27,7 @@ const App = () =>{
                 <Route path='/detail/:id' element={<ItemDetailContainer />}/>
                 <Route path='*' element={<Error />}/>
             </Routes>
+            </div>
         </Router>
         
     );

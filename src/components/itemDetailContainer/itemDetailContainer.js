@@ -22,7 +22,7 @@ const ItemDetailContainer = () => {
     }, []);
     return(
         <div>
-            {cargando ? <Spinner /> : <ItemDetail datos={users}/>}
+            {cargando ? <Spinner /> : <ItemDetail datos={users} />}
         </div>
     );
 };

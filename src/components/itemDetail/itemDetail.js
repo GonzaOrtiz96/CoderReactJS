@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import '../../Styles/bootstrap.min.css';
 
+//components
+import ItemCount from '../ItemCount/itemCount';
+
 
 
 const ItemDetail = ({datos}) => {
@@ -14,6 +17,7 @@ const ItemDetail = ({datos}) => {
             <p className='cardText'>
                 URL a su GitHub: <a href={datos.html_url}>{datos.html_url}</a>
             </p>
+            <ItemCount stock={13}/>
             </div>
         </div>
     );
