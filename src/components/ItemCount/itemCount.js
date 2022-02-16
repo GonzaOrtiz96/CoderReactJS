@@ -1,13 +1,10 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 import '../../Styles/bootstrap.min.css';
 
 
-const ItemCount = (props) => {
-    const [counter, setCounter] = useState(0);
-
-    const devuelve = () => {
-        return({counter});
-    };
+const ItemCount = ({onadd}) => {
+    /* const [counter, setCounter] = useState(0);
     const handelerCounterUp = () =>{
         if (counter < props.stock) {
             setCounter(counter + 1);
@@ -21,16 +18,17 @@ const ItemCount = (props) => {
         } else {
             alert("No existe el pedido negativo...")
         }
-    }
+    } */
 
     return(
         <div className='counterSection'>
-            <button onClick={handelerCounterUp} className='btn btn-outline-primary'>+</button>
+            {/* <button onClick={handelerCounterUp} className='btn btn-outline-primary'>+</button>
             <span style={{padding:10}}>{counter}</span>
-            <button onClick={handelerCounterDown} className='btn btn-outline-primary'>-</button>
-            <button className='btn btn-primary' onClick={() => {
-                return({counter})
-            }} style={{marginLeft:10}}>Enviar</button>
+            <button onClick={handelerCounterDown} className='btn btn-outline-primary'>-</button> */}
+            <Link to={'/cart'}>
+                <button className='btn btn-primary' onClick={onadd} >Agregar al carrito</button>
+            </Link>
+            
         </div>
     );
 }

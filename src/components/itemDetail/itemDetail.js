@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import '../../Styles/bootstrap.min.css';
 
 //components
@@ -7,6 +7,10 @@ import ItemCount from '../ItemCount/itemCount';
 
 
 const ItemDetail = ({datos}) => {
+    const [carrito, setCarrito] = useState([]);
+    const onAdd = () => {
+        setCarrito(datos.id);
+    };
     return(
         <div className='card col'>
             <div className='cardBody'>
@@ -17,7 +21,7 @@ const ItemDetail = ({datos}) => {
             <p className='cardText'>
                 URL a su GitHub: <a href={datos.html_url}>{datos.html_url}</a>
             </p>
-            <ItemCount stock={13}/>
+            <ItemCount onadd={onAdd}/>
             </div>
         </div>
     );

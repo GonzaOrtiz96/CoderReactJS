@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
         .then(respuesta => setUsers(respuesta.data[id.id-1]));
         setTimeout(() =>{
             setCargando(false);
-        }, 1000);
+        },200);
     }, []);
     return(
         <div>
