@@ -5,13 +5,16 @@ import { Link } from 'react-router-dom';
 //components
 import ItemCount from '../ItemCount/itemCount';
 
+//contex
+import { ItemsProvider } from '../cartContext/CartContext';
+
 
 
 const ItemDetail = ({datos}) => {
-    const [ver, setVer] =useState(false);
+    /* const [ver, setVer] =useState(false);
     const onAdd = () => {
         setVer(true);
-    };
+    }; */
     return(
         <div className='card col'>
             <div className='cardBody'>
@@ -22,10 +25,12 @@ const ItemDetail = ({datos}) => {
             <p className='cardText'>
                 URL a su GitHub: <a href={datos.html_url}>{datos.html_url}</a>
             </p>
-            <ItemCount onadd={onAdd} stock={7}/>
-            {ver && <Link to='/cart'>
-                <button className='btn btn-outline-success' style={{margin:10}}>Ir al carrito</button>
-            </Link>}
+            <ItemCount /* onadd={onAdd}  */stock={7} data={datos}/>
+            {/* {ver &&  */}<Link to='/cart'>
+                <button className='btn btn-outline-success' style={{margin:10}}>
+                    Ir al carrito
+                </button>
+            </Link>{/* } */}
             </div>
         </div>
     );

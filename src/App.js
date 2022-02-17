@@ -6,12 +6,14 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import NavBar from './components/navBar/NavBar';
 import ItemDetailContainer from './components/itemDetailContainer/itemDetailContainer';
 
-import { ItemsProvider } from './components/itemContext/ItemContext';
+//contex
+import { ItemsProvider } from './components/cartContext/CartContext';
 
 //views
 import Home from './views/home/Home';
 import Recomendados from './views/recomendados/Recomendados';
 import Nosotros from './views/nosotros/Nosotros';
+import Cart from './views/cart/Cart';
 import Error from './views/error/Error';
 
 
@@ -26,6 +28,7 @@ const App = () =>{
                     <Route path='/recomendados' element={<Recomendados />}/>
                     <Route path='/nosotros' element={<Nosotros />}/>
                     <Route path='/detail/:id' element={<ItemDetailContainer />}/>
+                    <Route path='/cart' element={<Cart />} />
                     <Route path='*' element={<Error />}/>
                 </Routes>
                 </div>
