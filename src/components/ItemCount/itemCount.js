@@ -23,13 +23,18 @@ const ItemCount = ({onadd, stock, data}) => {
         }
     }
 
+    const ejecutarDos = () => {
+        onadd();
+        addItem(data.id, counter, data.login)
+    }
+
     return(
         <div className='counterSection'>
             {console.log(data.id, counter, data.login)}
             <button onClick={handelerCounterUp} className='btn btn-outline-primary'>+</button>
             <span style={{padding:10}}>{counter}</span>
             <button onClick={handelerCounterDown} className='btn btn-outline-primary'>-</button>
-            <button className='btn btn-primary' onClick={() => addItem(data.id, counter, data.login)} style={{marginLeft:10}} >Agregar al carrito</button>
+            <button className='btn btn-primary' onClick={() => ejecutarDos()} style={{marginLeft:10}} >Agregar al carrito</button>
         </div>
     );
 }

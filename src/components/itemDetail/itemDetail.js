@@ -11,10 +11,10 @@ import { ItemsProvider } from '../cartContext/CartContext';
 
 
 const ItemDetail = ({datos}) => {
-    /* const [ver, setVer] =useState(false);
+    const [ver, setVer] =useState(false);
     const onAdd = () => {
         setVer(true);
-    }; */
+    };
     return(
         <div className='card col'>
             <div className='cardBody'>
@@ -25,11 +25,9 @@ const ItemDetail = ({datos}) => {
             <p className='cardText'>
                 URL a su GitHub: <a href={datos.html_url}>{datos.html_url}</a>
             </p>
-            <ItemCount stock={7} data={datos}/>
-            {/* {ver &&  */}<Link to='/cart'>
-                <button className='btn btn-outline-success' style={{margin:10}}>
-                    Ir al carrito
-                </button>
+            <ItemCount onadd={onAdd} stock={Math.ceil(Math.random()*10)} data={datos}/>
+            <Link to='/cart'>
+                {ver && <button className='btn btn-outline-success' style={{margin:10}}>Ir al carrito</button>}
             </Link>
             </div>
         </div>
