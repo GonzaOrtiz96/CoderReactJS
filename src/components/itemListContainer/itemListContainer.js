@@ -14,7 +14,6 @@ const ListContainer = () => {
     }, []);
     return(
         <div className='container'>
-            {console.log(users)}
             <div className='row'>
                 <ItemList datos={users}/>
             </div>

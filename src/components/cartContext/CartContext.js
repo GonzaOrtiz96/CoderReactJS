@@ -8,28 +8,51 @@ export const ItemsProvider = ({children}) => {
     const [items, setItems] = useState(initalState);
 
     const addItem = (id, cantidad, item) =>{
-        setItems({cartId: {id}, pedido: {cantidad}, nombre: {item}});
+        const newItem = {
+            cartId: id,
+            pedido: cantidad, 
+            nombre: item
+        }
+        const encontrado = items.find(
+            (item) => item.cartId === id
+        );
+
+        if (encontrado) {
+            encontrado.pedido += cantidad;
+        }else{
+            items.push(newItem);
+        }
+        setItems([...items]);
     }
+
+
     const removeItem = (itemId) =>{
-        setItems(items.filter((carritoId) => {
-            return carritoId !== itemId;
-        }));
+        console.log(items);
+        console.log(itemId);
+        const removido = items.filter((item) => item.cartId !== itemId);
+        console.log(removido);
+        setItems(removido);
     }
+
+
     const clear = () => {
         setItems(initalState);
     }
+
+
     const isInCart = (id) => {
-        items.forEach((cada) => {
-            if (cada.id = id){
-                return true
-            } else {
-                return false
-            }
-        })
+        const encontrado = items.find(
+            (item) => item.cartId === id
+        );
+        if (encontrado) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     return(
-        <ItemContext.Provider value={[items, setItems, addItem, removeItem, clear, isInCart]}>
+        <ItemContext.Provider value={{items, setItems, addItem, removeItem, clear, isInCart}}>
             {children}
         </ItemContext.Provider> 
     );

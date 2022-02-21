@@ -25,12 +25,12 @@ const ItemDetail = ({datos}) => {
             <p className='cardText'>
                 URL a su GitHub: <a href={datos.html_url}>{datos.html_url}</a>
             </p>
-            <ItemCount /* onadd={onAdd}  */stock={7} data={datos}/>
+            <ItemCount stock={7} data={datos}/>
             {/* {ver &&  */}<Link to='/cart'>
                 <button className='btn btn-outline-success' style={{margin:10}}>
                     Ir al carrito
                 </button>
-            </Link>{/* } */}
+            </Link>
             </div>
         </div>
     );

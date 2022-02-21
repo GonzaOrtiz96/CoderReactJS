@@ -6,7 +6,7 @@ import { ItemContext } from '../cartContext/CartContext';
 
 
 const ItemCount = ({onadd, stock, data}) => {
-    const [items, setItems, addItem, removeItem, clear, isInCart] = useContext(ItemContext);
+    const {items, setItems, addItem} = useContext(ItemContext);
     const [counter, setCounter] = useState(1);
     const handelerCounterUp = () =>{
         if (counter < stock) {
