@@ -5,7 +5,7 @@ import '../../Styles/bootstrap.min.css';
 import { ItemContext } from '../cartContext/CartContext';
 
 
-const ItemCount = ({onadd, stock, data}) => {
+const ItemCount = ({onadd, stock, data, precio}) => {
     const {items, setItems, addItem} = useContext(ItemContext);
     const [counter, setCounter] = useState(1);
     const handelerCounterUp = () =>{
@@ -25,12 +25,11 @@ const ItemCount = ({onadd, stock, data}) => {
 
     const ejecutarDos = () => {
         onadd();
-        addItem(data.id, counter, data.login)
+        addItem(data.id, counter, data.login,precio)
     }
 
     return(
         <div className='counterSection'>
-            {console.log(data.id, counter, data.login)}
             <button onClick={handelerCounterUp} className='btn btn-outline-primary'>+</button>
             <span style={{padding:10}}>{counter}</span>
             <button onClick={handelerCounterDown} className='btn btn-outline-primary'>-</button>

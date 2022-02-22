@@ -12,7 +12,7 @@ const ItemDetailContainer = () => {
     const [cargando, setCargando] = useState(true);
 
     let id = useParams();
-
+    
     useEffect(() => {
         axios('https://api.github.com/users')
         .then(respuesta => setUsers(respuesta.data[id.id-1]));
