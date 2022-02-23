@@ -12,7 +12,6 @@ import { ItemsProvider } from '../cartContext/CartContext';
 
 const ItemDetail = ({datos}) => {
     const [ver, setVer] =useState(false);
-    const precio = Math.ceil(Math.random()*1000);
     const onAdd = () => {
         setVer(true);
     };
@@ -20,15 +19,13 @@ const ItemDetail = ({datos}) => {
     return(
         <div className='card col'>
             <div className='cardBody'>
-            <img className='imgFluid' src={datos.avatar_url} style={{width:300}} alt='imagen'/>
+            <img className='imgFluid' src={datos.img} style={{width:300}} alt='imagen'/>
             <h2 className='cradTitle'>
-                {datos.login}
+                {datos.nombre}
             </h2>
-            <p className='cardText'>
-                URL a su GitHub: <a href={datos.html_url}>{datos.html_url}</a>
-            </p>
-            <p className='cardText'>Precio del producto: ${precio}</p>
-            {ver ? null : <ItemCount onadd={onAdd} stock={Math.ceil(Math.random()*10)} data={datos} precio={precio}/>}
+            <p>Stock: {datos.stock}</p>
+            <p className='cardText'>Precio del producto: ${datos.precio}</p>
+            {ver ? null : <ItemCount onadd={onAdd} stock={datos.stock} data={datos}/>}
             <Link to='/cart'>
                 {ver && <button className='btn btn-outline-success' style={{margin:10}}>Ir al carrito</button>}
             </Link>

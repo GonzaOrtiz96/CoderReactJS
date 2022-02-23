@@ -4,12 +4,12 @@ import React from 'react';
 const Item = ({ data }) => {
     return(
         <div className='cardBody' style={{margin:20}}>
-            <img className='imgFluid' src={data.avatar_url} style={{width:150}} alt='imagen de producto'/>
+            <img className='imgFluid' src={data.img} style={{width:150}} alt='imagen de producto'/>
             <h2 className='cardTitle'>
-                {data.login}
+                {data.nombre}
             </h2>
             <p className='cardText'>
-                URL a su GitHub: <a href={data.html_url}>{data.html_url}</a>
+                stock: {data.stock}
             </p>
         </div>
     );

@@ -5,8 +5,8 @@ import '../../Styles/bootstrap.min.css';
 import { ItemContext } from '../cartContext/CartContext';
 
 
-const ItemCount = ({onadd, stock, data, precio}) => {
-    const {items, setItems, addItem} = useContext(ItemContext);
+const ItemCount = ({onadd, stock, data}) => {
+    const {addItem} = useContext(ItemContext);
     const [counter, setCounter] = useState(1);
     const handelerCounterUp = () =>{
         if (counter < stock) {
@@ -25,7 +25,7 @@ const ItemCount = ({onadd, stock, data, precio}) => {
 
     const ejecutarDos = () => {
         onadd();
-        addItem(data.id, counter, data.login,precio)
+        addItem(data.id, counter, data.login, data.precio)
     }
 
     return(

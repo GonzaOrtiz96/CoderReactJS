@@ -1,28 +1,50 @@
 import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import '../../Styles/bootstrap.min.css';
-import axios from 'axios';
 
 //components
 import ItemDetail from '../itemDetail/itemDetail';
 import Spinner from '../spinners/spinner';
 
+//Firebase -- Firestore
+import {db} from '../../firebase/firebaseConfig';
+import { collection, query, where, getDocs } from "firebase/firestore";
+
 const ItemDetailContainer = () => {
-    const [users, setUsers] = useState([]);
+    const [producto, setProducto] = useState([]);
     const [cargando, setCargando] = useState(true);
 
-    let id = useParams();
-    
+    let itemId = useParams();
+
     useEffect(() => {
+        const getProductos = async  () => {
+            const q = query(collection(db, 'items'));
+            const querySnapshot = await getDocs(q);
+            const cada = [];
+            querySnapshot.forEach((uno) => {
+                cada.push({...uno.data(), id: uno.id});
+            });
+            cada.forEach((uno) => {
+                if (uno.id == itemId.id) {
+                    setProducto(uno);
+                }
+            });
+            setTimeout(() =>{
+                setCargando(false);
+            },200);};
+        getProductos();
+    }, []);
+    
+    /* useEffect(() => {
         axios('https://api.github.com/users')
         .then(respuesta => setUsers(respuesta.data[id.id-1]));
         setTimeout(() =>{
             setCargando(false);
         },200);
-    }, []);
+    }, []); */
     return(
         <div>
-            {cargando ? <Spinner /> : <ItemDetail datos={users} />}
+            {cargando ? <Spinner /> : <ItemDetail datos={producto} />}
         </div>
     );
 };
