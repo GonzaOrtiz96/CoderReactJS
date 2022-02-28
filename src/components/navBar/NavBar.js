@@ -21,7 +21,7 @@ const NavBar = () => {
                 <Link className="nav-item" to='/recomendados'>Recomendados</Link>
                 <Link className="nav-item" to='/nosotros'>Nosotros</Link>
                 <li >{carritoEsCero() && <CartWidget />}</li>
-                <li style={{color:'white', fontSize:50}}>Pritanorka</li>
+                <li style={{color:'white', fontSize:30}}>Pritanorka</li>
                 {carritoEsCero()}
             </ul>
         </nav>

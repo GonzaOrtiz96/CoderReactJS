@@ -15,6 +15,7 @@ import Recomendados from './views/recomendados/Recomendados';
 import Nosotros from './views/nosotros/Nosotros';
 import Cart from './views/cart/Cart';
 import Error from './views/error/Error';
+import Categoria from './components/categoria/Categoria';
 
 
 
@@ -30,6 +31,7 @@ const App = () =>{
                     <Route path='/recomendados' element={<Recomendados />}/>
                     <Route path='/nosotros' element={<Nosotros />}/>
                     <Route path='/detail/:id' element={<ItemDetailContainer />}/>
+                    <Route path='/category/:tipo' element={<Categoria />}/>
                     <Route path='/cart' element={<Cart />} />
                     <Route path='*' element={<Error />}/>
                 </Routes>

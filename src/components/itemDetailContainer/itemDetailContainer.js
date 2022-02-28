@@ -34,14 +34,6 @@ const ItemDetailContainer = () => {
             },200);};
         getProductos();
     }, []);
-    
-    /* useEffect(() => {
-        axios('https://api.github.com/users')
-        .then(respuesta => setUsers(respuesta.data[id.id-1]));
-        setTimeout(() =>{
-            setCargando(false);
-        },200);
-    }, []); */
     return(
         <div>
             {cargando ? <Spinner /> : <ItemDetail datos={producto} />}

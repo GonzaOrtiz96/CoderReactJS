@@ -30,10 +30,11 @@ const ItemCount = ({onadd, stock, data}) => {
 
     return(
         <div className='counterSection'>
-            <button onClick={handelerCounterUp} className='btn btn-outline-primary'>+</button>
-            <span style={{padding:10}}>{counter}</span>
             <button onClick={handelerCounterDown} className='btn btn-outline-primary'>-</button>
-            <button className='btn btn-primary' onClick={() => ejecutarDos()} style={{marginLeft:10}} >Agregar al carrito</button>
+            <span style={{padding:10}}>{counter}</span>
+            <button onClick={handelerCounterUp} className='btn btn-outline-primary'>+</button>
+            <br></br>
+            <button className='btn btn-primary' onClick={() => ejecutarDos()} style={{margin:10}} >Agregar al carrito</button>
         </div>
     );
 }

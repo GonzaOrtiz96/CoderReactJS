@@ -9,14 +9,16 @@ import React from 'react';
 
 const ItemList = ({datos}) =>{
     return(
-        <div className='card col'>
+        <div className='col-sm-8 row'>
             {datos.map((info) =>{
                 return (
-                    <Link to={`/detail/${info.id}`}>
-                        <div key={info.id}>
-                            <Item data={info}/>
-                        </div>
-                    </Link>
+                    <div className='col-sm-4' key={info.id}>
+                        <Item data={info} />
+                        <Link to={`/detail/${info.id}`}>
+                            <button className='btn btn-outline-primary'>Ir a detalle</button>
+                        </Link>
+                    </div>
+                    
                 )
             })}
         </div>
