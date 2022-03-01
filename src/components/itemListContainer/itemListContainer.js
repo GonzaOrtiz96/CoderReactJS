@@ -38,6 +38,12 @@ const ListContainer = () => {
                     <Link to={'/category/top'}>
                         <button className='btn btn-outline-info'>Filtrar por Tops</button>
                     </Link>
+                    <Link to={'/category/abrigo'}>
+                        <button className='btn btn-outline-info'>Filtrar por Abrigos</button>
+                    </Link>
+                    <Link to={'/category/conjunto'}>
+                        <button className='btn btn-outline-info'>Filtrar por Conjuntos</button>
+                    </Link>
                 </div>
                 
             </div>

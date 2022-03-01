@@ -8,12 +8,13 @@ export const ItemsProvider = ({children}) => {
     const [items, setItems] = useState(initalState);
     const [carrito, setCarrito] = useState(0);
     const [total, setTotal] = useState(0);
-    const addItem = (id, cantidad, item, costo) =>{
+    const addItem = (id, cantidad, item, costo, imagen) =>{
         const newItem = {
             cartId: id,
             pedido: cantidad, 
             nombre: item,
-            precio: costo
+            precio: costo,
+            img: imagen
         }
         const encontrado = items.find(
             (item) => item.cartId === id
@@ -47,6 +48,7 @@ export const ItemsProvider = ({children}) => {
     const clear = () => {
         setItems([]);
         setCarrito(0);
+        setTotal(0);
     }
 
 

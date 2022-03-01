@@ -25,7 +25,7 @@ const ItemCount = ({onadd, stock, data}) => {
 
     const ejecutarDos = () => {
         onadd();
-        addItem(data.id, counter, data.login, data.precio)
+        addItem(data.id, counter, data.nombre, data.precio, data.img)
     }
 
     return(

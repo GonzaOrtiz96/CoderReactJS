@@ -15,7 +15,7 @@ import { Link } from 'react-router-dom';
 const NavBar = () => {
     const {carritoEsCero} = useContext(ItemContext);
     return(
-        <nav className="sticky-top">
+        <nav className='sticky-top'>
             <ul className="nav nav-pills">
                 <Link className="nav-item" to='/'>Inicio</Link>
                 <Link className="nav-item" to='/recomendados'>Recomendados</Link>
