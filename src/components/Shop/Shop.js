@@ -4,6 +4,7 @@ import '../../Styles/bootstrap.min.css';
 //components
 import MessageSuccess from '../MessageSuccess/MessageSuccess';
 
+
 //fireBase
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../../firebase/firebaseConfig';
@@ -21,7 +22,6 @@ const initialState = {
 const Shop = ({cart}) => { 
     const [valores, setValores] = useState(initialState);
     const [compraID, setCompraID] = useState('');
-
     const onChange = (e) => {
         const {value, name} = e.target;
         setValores({...valores, [name]: value, items: cart});  

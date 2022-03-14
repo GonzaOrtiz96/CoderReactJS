@@ -31,7 +31,7 @@ const ListContainer = () => {
         getProductos();
     }, []);
     return(
-        <div className='container'>
+        <div className='container' style={{marginBottom:25}}>
             <div className='row'>
                 {cargando ? <Spinner /> : <ItemList datos={productos}/>}
                 <div className='col-sm-4 row-sm-2 '>
@@ -45,9 +45,10 @@ const ListContainer = () => {
                         <button className='btn btn-outline-info'>Filtrar por Conjuntos</button>
                     </Link>
                 </div>
-                
             </div>
-        </div>    
+        </div>
+        
+        
     );
 };
 

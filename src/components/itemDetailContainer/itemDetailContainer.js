@@ -8,7 +8,7 @@ import Spinner from '../spinners/spinner';
 
 //Firebase -- Firestore
 import {db} from '../../firebase/firebaseConfig';
-import { collection, query, where, getDocs } from "firebase/firestore";
+import { collection, query, getDocs } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
     const [producto, setProducto] = useState([]);
@@ -35,7 +35,7 @@ const ItemDetailContainer = () => {
         getProductos();
     }, []);
     return(
-        <div>
+        <div style={{marginBottom:25}}>
             {cargando ? <Spinner /> : <ItemDetail datos={producto} />}
         </div>
     );

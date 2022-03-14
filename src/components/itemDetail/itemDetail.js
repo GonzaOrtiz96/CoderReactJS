@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import '../../Styles/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 
@@ -6,11 +6,10 @@ import { Link } from 'react-router-dom';
 import ItemCount from '../ItemCount/itemCount';
 
 //contex
-import { ItemsProvider } from '../cartContext/CartContext';
-
-//poner el contex aca y no en item count
+import { ItemContext } from '../cartContext/CartContext';
 
 const ItemDetail = ({datos}) => {
+    const {addItem} = useContext(ItemContext);
     const [ver, setVer] =useState(false);
     const onAdd = () => {
         setVer(true);
@@ -25,7 +24,7 @@ const ItemDetail = ({datos}) => {
             </h2>
             <p>Stock: {datos.stock}</p>
             <p className='cardText'>Precio del producto: ${datos.precio}</p>
-            {ver ? null : <ItemCount onadd={onAdd} stock={datos.stock} data={datos}/>}
+            {ver ? null : <ItemCount onadd={onAdd} stock={datos.stock} data={datos} addItem={addItem}/>}
             <Link to='/cart'>
                 {ver && <button className='btn btn-outline-success' style={{margin:10}}>Ir al carrito</button>}
             </Link>

@@ -60,3 +60,7 @@ nav .nav-pills .nav-link:hover {
           transform: scale(1.02);
 }
 
+.footer {
+  background-color: grey;
+  padding: 10px;
+}

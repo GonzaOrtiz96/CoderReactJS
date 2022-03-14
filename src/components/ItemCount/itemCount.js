@@ -1,12 +1,9 @@
 import React, {useState, useContext} from 'react';
 import '../../Styles/bootstrap.min.css';
 
-//contex
-import { ItemContext } from '../cartContext/CartContext';
 
 
-const ItemCount = ({onadd, stock, data}) => {
-    const {addItem} = useContext(ItemContext);
+const ItemCount = ({onadd, stock, data, addItem}) => {
     const [counter, setCounter] = useState(1);
     const handelerCounterUp = () =>{
         if (counter < stock) {

@@ -36,9 +36,9 @@ const Cart = () => {
                     })}
                 </div>
                 <div className='col-sm-4 row-sm-4'>
-                    <Shop cart={items}/>
+                    {carritoEsCero() && <Shop cart={items}/>}
                 </div>
-                {carritoEsCero() && <p className='cardTitle'>Total a Pagar: ${total}</p>}
+                {carritoEsCero() && <p className='cardTitle' style={{margin:30}}>Total a Pagar: ${total}</p>}
             </div>
         </div>
     )

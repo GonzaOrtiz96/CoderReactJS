@@ -5,8 +5,11 @@ export const ItemContext = createContext();
 const initalState = [];
 
 export const ItemsProvider = ({children}) => {
+    /* lista de los items en carrito */
     const [items, setItems] = useState(initalState);
-    const [carrito, setCarrito] = useState(0);
+    /* indica la cantidad individual de items en el carrito */
+    const [cantidadTotalItems, setCantidadTotalItems] = useState(0);
+    /* indica el precio total a pagar en el carrito */
     const [total, setTotal] = useState(0);
     const addItem = (id, cantidad, item, costo, imagen) =>{
         const newItem = {
@@ -27,7 +30,7 @@ export const ItemsProvider = ({children}) => {
             items.push(newItem);
             setTotal(total + (cantidad * costo));
         }
-        setCarrito(carrito + cantidad);
+        setCantidadTotalItems(cantidadTotalItems + cantidad);
         setItems([...items]);
     }
 
@@ -39,15 +42,14 @@ export const ItemsProvider = ({children}) => {
         const encontrado = items.find(
             (item) => item.cartId === itemId
         );
-
-        setCarrito(carrito - encontrado.pedido);
-        setCarrito(carrito - (encontrado.precio * encontrado.pedido));
+        setCantidadTotalItems(cantidadTotalItems - encontrado.pedido);
+        setTotal(total - (encontrado.precio * encontrado.pedido));
     }
 
 
     const clear = () => {
         setItems([]);
-        setCarrito(0);
+        setCantidadTotalItems(0);
         setTotal(0);
     }
 
@@ -64,7 +66,7 @@ export const ItemsProvider = ({children}) => {
     }
 
     const carritoEsCero = () => {
-        if (carrito > 0) {
+        if (cantidadTotalItems > 0) {
             return true;
         } else {
             return false;
@@ -72,7 +74,7 @@ export const ItemsProvider = ({children}) => {
     }
 
     return(
-        <ItemContext.Provider value={{items, setItems, addItem, removeItem, clear, isInCart, carrito, carritoEsCero, total}}>
+        <ItemContext.Provider value={{items, setItems, addItem, removeItem, clear, isInCart, cantidadTotalItems, carritoEsCero, total}}>
             {children}
         </ItemContext.Provider> 
     );
