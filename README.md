@@ -1,12 +1,12 @@
-# Pagina creada con ReactJS
+# Pritanorka
 
-Este repositorio es para llevar un momento a momento de mi proyecto (por ahora).
+Es un proyecto de E-commerce para el curso de ReactJS de CorderHouse.
 
 ## Uso
 
 Todo lo usado en este repositorio es para libre uso y/o interpretación de cada uno.
 
-El sitio fue creado usando ReactJS, Bootstrap 5.
+El sitio fue creado usando ReactJS y Bootstrap 5 para los estilos.
 
 ## Contribuciones
 
